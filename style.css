@@ -1,0 +1,133 @@
+/* General Body and Layout */
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow: hidden; 
+}
+
+/* All Screen Setup */
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out; 
+    text-align: center;
+}
+
+/* Hidden Screens */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    display: none; 
+}
+
+/* --- SCREEN 1: Welcome/Entry --- */
+#screen1 {
+    background-color: #6a0dad; /* Purple Background */
+    color: white;
+}
+.welcome-text {
+    font-size: 4em;
+    letter-spacing: 5px;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+#openButton {
+    padding: 15px 40px;
+    margin-top: 30px;
+    background-color: #f72585; /* Pink Button */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background-color 0.3s, transform 0.1s;
+}
+#openButton:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+/* --- SCREEN 2: Cake Game --- */
+/* Cake emoji ke liye CSS (Heart se badal diya gaya) */
+.flying-cake {
+    position: absolute; /* Cake ko drop hone ke liye zaroori */
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.1s;
+    animation: floatCake 5s infinite ease-in-out; 
+}
+.flying-cake:hover {
+    transform: scale(1.2); 
+}
+@keyframes floatCake {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* --- SCREEN 3: Quiz/Level 2 --- */
+#screen3 {
+    background-color: #6a0dad; /* Purple Background */
+    color: white;
+}
+.quiz-container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    color: #333;
+}
+#questionText {
+    font-size: 1.4em;
+    color: #e94e77;
+    margin-bottom: 15px;
+}
+#quizAnswer {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.quiz-container button {
+    padding: 10px 20px;
+    background-color: #f72585; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.quiz-container button:hover {
+    background-color: #d81b60;
+}
+
+
+/* --- SCREEN 4: Final Message (I LOVE YOU) --- */
+#screen4 {
+    background-color: #6a0dad; /* Purple Background */
+    color: white;
+}
+.final-message {
+    font-size: 6em;
+    color: #ffcc00; /* Yellow Glow */
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+@keyframes neonGlow {
+    from { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ff6b81; }
+    to { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff4757, 0 0 30px #ff6b81; }
+}

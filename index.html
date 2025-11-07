@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! (Aapka Naam)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="myAudio" src="bday_song.mp3" loop></audio>
+
+    <div class="screen" id="screen1">
+        <h1 class="welcome-text">Happy Birthday!</h1>
+        <p class="wishing-message">Wishing you a day filled with love and joy! 🎉</p>
+        <button id="openButton" onclick="showScreen(2)">OPEN</button> 
+    </div>
+
+    <div class="screen hidden" id="screen2">
+        <h2>Capture the hearts! ❤️</h2>
+        <p>You must capture <span id="requiredHearts">10</span> hearts to reach the next level.</p>
+        <p>Hearts captured: <span id="capturedCount">0</span>/<span id="requiredHearts2">10</span></p>
+        </div>
+
+    <div class="screen hidden" id="screen3">
+        <h1 class="final-message">I LOVE YOU</h1>
+        <div class="flower-animation">
+            </div>
+        <p class="signature-message">Happy Birthday once again! - [Aapka Naam]</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
